@@ -26,16 +26,16 @@ static void Sort(int[] arr)
 {
     int n = arr.Length;
 
-    // Costruisci un heap max (inizia dalla metà dell'array)
+    // Costruiamo un heap max (iniziando dalla metà dell'array)
     for (int i = n / 2 - 1; i >= 0; i--)
     {
         Heapify(arr, n, i);
     }
 
-    // Estrai uno per uno gli elementi dall'heap
+    // Estraiamo uno per uno gli elementi dall'heap
     for (int i = n - 1; i > 0; i--)
     {
-        // Scambia l'elemento radice (massimo) con l'ultimo elemento
+        // Scambiamo l'elemento radice (massimo) con l'ultimo elemento
         int temp = arr[0];
         arr[0] = arr[i];
         arr[i] = temp;
@@ -70,10 +70,11 @@ static void Heapify(int[] arr, int n, int i)
         arr[i] = arr[largest];
         arr[largest] = swap;
 
-        // Richiama ricorsivamente Heapify sul sottoalbero colpito
+        // Richiama ricorsivamente Heapify sul sottoalbero
         Heapify(arr, n, largest);
     }
 }
+
 
 static void PrintArray(int[] arr)
 {
